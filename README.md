@@ -12,3 +12,9 @@
 打开浏览器：127.0.0.1:8066/zmEngine/<br/>
 账号密码是：admin  888888<br/>
 对外API：127.0.0.1:8066/weapp/jiedianapi/getxiayijiedian?workflow=你设定的流程编码&banben=你设定的流程编码&jiedian=节点编码<br/>
+<br/>
+<br/>
+<h1>特别说明：</h1>
+如果前辈或道友有所指点：请联系<span style='color:red;'>496472571</span>QQ和微信同号。<br/>
+觉得不错，请赏个星星☆★
+
