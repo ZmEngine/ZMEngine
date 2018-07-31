@@ -1,0 +1,74 @@
+2018/07/30 19:26:12 [notice] 12908#16888: signal process started
+2018/07/30 19:26:12 [error] 12908#16888: CreateFile() "D:\XiangMu\ZMEngine\ZmEnige\ZmEnige\nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2018/07/30 19:26:53 [notice] 11328#17584: using the "select" event method
+2018/07/30 19:26:53 [notice] 11328#17584: using the "select" event method
+2018/07/30 19:26:53 [notice] 11328#17584: nginx/1.10.3
+2018/07/30 19:26:53 [notice] 11328#17584: nginx/1.10.3
+2018/07/30 19:26:53 [info] 11328#17584: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/07/30 19:26:53 [notice] 11328#17584: start worker processes
+2018/07/30 19:26:53 [notice] 11328#17584: start worker processes
+2018/07/30 19:26:53 [notice] 11328#17584: start worker process 12124
+2018/07/30 19:26:53 [notice] 11328#17584: start worker process 12124
+2018/07/30 19:26:53 [notice] 12124#10800: nginx/1.10.3
+2018/07/30 19:26:53 [notice] 12124#10800: nginx/1.10.3
+2018/07/30 19:26:53 [info] 12124#10800: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/07/30 19:26:53 [notice] 12124#10800: create thread 11224
+2018/07/30 19:26:53 [notice] 12124#10800: create thread 11224
+2018/07/30 19:26:53 [notice] 12124#10800: create thread 19136
+2018/07/30 19:26:53 [notice] 12124#10800: create thread 19136
+2018/07/30 19:26:53 [notice] 12124#10800: create thread 9092
+2018/07/30 19:26:53 [notice] 12124#10800: create thread 9092
+2018/07/30 19:28:56 [notice] 15292#19380: signal process started
+2018/07/30 19:28:56 [notice] 11328#17584: reconfiguring
+2018/07/30 19:28:56 [notice] 11328#17584: reconfiguring
+2018/07/30 19:28:56 [notice] 11328#17584: using the "select" event method
+2018/07/30 19:28:56 [notice] 11328#17584: using the "select" event method
+2018/07/30 19:28:56 [notice] 11328#17584: start worker processes
+2018/07/30 19:28:56 [notice] 11328#17584: start worker processes
+2018/07/30 19:28:56 [notice] 11328#17584: start worker process 18804
+2018/07/30 19:28:56 [notice] 11328#17584: start worker process 18804
+2018/07/30 19:28:56 [notice] 18804#16628: nginx/1.10.3
+2018/07/30 19:28:56 [notice] 18804#16628: nginx/1.10.3
+2018/07/30 19:28:56 [info] 18804#16628: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/07/30 19:28:56 [notice] 12124#10800: gracefully shutting down
+2018/07/30 19:28:56 [notice] 12124#10800: gracefully shutting down
+2018/07/30 19:28:56 [notice] 18804#16628: create thread 17432
+2018/07/30 19:28:56 [notice] 18804#16628: create thread 17432
+2018/07/30 19:28:56 [notice] 12124#19136: exiting
+2018/07/30 19:28:56 [notice] 12124#19136: exiting
+2018/07/30 19:28:56 [notice] 18804#16628: create thread 18792
+2018/07/30 19:28:56 [notice] 18804#16628: create thread 18792
+2018/07/30 19:28:56 [notice] 18804#16628: create thread 8080
+2018/07/30 19:28:56 [notice] 18804#16628: create thread 8080
+2018/07/30 19:28:56 [notice] 12124#11224: exiting
+2018/07/30 19:28:56 [notice] 12124#11224: exiting
+2018/07/30 19:28:56 [notice] 12124#10800: exit
+2018/07/30 19:28:56 [notice] 12124#10800: exit
+2018/07/30 19:28:56 [notice] 11328#17584: worker process 12124 exited with code 0
+2018/07/30 19:28:56 [notice] 11328#17584: worker process 12124 exited with code 0
+2018/07/30 19:31:15 [notice] 11328#17584: worker process 18804 exited with code 40010004
+2018/07/30 19:31:15 [notice] 11328#17584: worker process 18804 exited with code 40010004
+2018/07/30 19:42:18 [notice] 11684#11688: using the "select" event method
+2018/07/30 19:42:18 [notice] 11684#11688: using the "select" event method
+2018/07/30 19:42:18 [notice] 11684#11688: nginx/1.10.3
+2018/07/30 19:42:18 [notice] 11684#11688: nginx/1.10.3
+2018/07/30 19:42:18 [info] 11684#11688: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/07/30 19:42:18 [notice] 11684#11688: start worker processes
+2018/07/30 19:42:18 [notice] 11684#11688: start worker processes
+2018/07/30 19:42:18 [notice] 11684#11688: start worker process 11656
+2018/07/30 19:42:18 [notice] 11684#11688: start worker process 11656
+2018/07/30 19:42:18 [notice] 11656#8648: nginx/1.10.3
+2018/07/30 19:42:18 [notice] 11656#8648: nginx/1.10.3
+2018/07/30 19:42:18 [info] 11656#8648: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/07/30 19:42:18 [notice] 11656#8648: create thread 11772
+2018/07/30 19:42:18 [notice] 11656#8648: create thread 11772
+2018/07/30 19:42:18 [notice] 11656#8648: create thread 11808
+2018/07/30 19:42:18 [notice] 11656#8648: create thread 11808
+2018/07/30 19:42:18 [notice] 11656#8648: create thread 11540
+2018/07/30 19:42:18 [notice] 11656#8648: create thread 11540
+2018/07/30 19:42:37 [error] 11656#11772: *1 CreateFile() "D:\XiangMu\ZMEngine\ZmEnige\ZmEnige\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/login.html?skey=null"
+2018/07/30 19:42:37 [error] 11656#11772: *1 CreateFile() "D:\XiangMu\ZMEngine\ZmEnige\ZmEnige\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/login.html?skey=null"
+2018/07/30 19:42:37 [error] 11656#11772: *1 CreateFile() "D:\XiangMu\ZMEngine\ZmEnige\ZmEnige\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/login.html?skey=null"
+2018/07/30 19:42:54 [info] 11656#11772: *2 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/07/30 21:02:14 [notice] 11684#11688: worker process 11656 exited with code 40010004
+2018/07/30 21:02:14 [notice] 11684#11688: worker process 11656 exited with code 40010004

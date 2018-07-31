@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ZMEngine</title>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="../_Res/JS/jquery-2.1.4.min.js"></script>
+    <script src="../JS/config.js"></script>
+</head>
+<body>
+    <div id="app">
+        <el-container style="border: 1px solid #eee" v-loading.fullscreen.lock="islogin">
+            <el-header>
+                <div style="height:30px;">
+                    <span style="float: left; font-size: 20px;font-weight:bolder;">ZMEngine</span>
+                    &nbsp;
+                    <span style="float: right; font-size: 14px">
+                        {{ad.name}}  &nbsp;  &nbsp;&nbsp;&nbsp;
+                        <a href="../logout.html">退出</a>
+                    </span>
+                </div>
+            </el-header>
+
+
+            <el-container>
+                <el-main>
+                    <el-row style="margin-bottom:20px;">
+                        <label>编辑版本:</label>
+                        <el-select v-model="banben" placeholder="请选择" label="" @change="SelectBanBen">
+                            <el-option v-for="item in banbens"
+                                       :key="item.value"
+                                       :label="item.label"
+                                       :value="item.value">
+                            </el-option>
+                        </el-select>
+                        <el-button type="success" size="mini" @click="addbanben()">发布新版本</el-button>
+                    </el-row>
+
+
+                    <template>
+                        <el-tabs v-model="activeName">
+                            <el-tab-pane label="参数配置" name="first">
+                                <el-row style="margin-bottom:20px;">
+
+                                    <el-button type="success" size="mini" @click="canshu_add()">新增</el-button>
+                                    <el-button type="warning" size="mini" @click="canshu_xiugai()">修改</el-button>
+                                    <el-button type="danger" size="mini" @click="canshu_shanchu()">删除</el-button>
+                                </el-row>
+                                <el-table :data="canshu_tableData3"
+                                          height="700"
+                                          border
+                                          highlight-current-row
+                                          @current-change="canshu_SelectRow"
+                                          style="width: 100%">
+                                    <el-table-column type="index" label="序号" width="50">
+                                    </el-table-column>
+                                    <el-table-column prop="code"
+                                                     label="编码"
+                                                     width="180">
+                                    </el-table-column>
+                                    <el-table-column prop="morenzhi"
+                                                     label="默认值" width="180">
+                                    </el-table-column>
+                                    <el-table-column prop="beizhu"
+                                                     label="备注">
+                                    </el-table-column>
+                                </el-table>
+                            </el-tab-pane>
+                            <el-tab-pane label="节点配置" name="second">
+                                <el-row style="margin-bottom:20px;">
+
+                                    <el-button type="success" size="mini" @click="jiedian_add()">新增</el-button>
+                                    <el-button type="warning" size="mini" @click="jiedian_xiugai()">修改</el-button>
+                                    <el-button type="danger" size="mini" @click="jiedian_shanchu()">删除</el-button>
+                                </el-row>
+                                <el-table :data="jiedian_tableData3"
+                                          height="700"
+                                          border
+                                          highlight-current-row
+                                          @current-change="jiedian_SelectRow"
+                                          style="width: 100%">
+                                    <el-table-column type="index" label="序号" width="50">
+                                    </el-table-column>
+                                    <el-table-column fixed="left"
+                                                     label="操作"
+                                                     width="180">
+                                        <template slot-scope="scope">
+                                            <a :href="'./jiedian.html?workflow='+workflow+'&banben='+banben+'&jiedian='+scope.row.code" target="_blank">设定</a>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column prop="code"
+                                                     label="编码"
+                                                     width="180">
+                                    </el-table-column>
+                                    <el-table-column prop="mingcheng"
+                                                     label="名称" width="180">
+                                    </el-table-column>
+                                    <el-table-column prop="qishi"
+                                                     label="是否起始节点" width="280">
+                                    </el-table-column>
+
+                                </el-table>
+                            </el-tab-pane>
+                        </el-tabs>
+
+                    </template>
+                </el-main>
+            </el-container>
+        </el-container>
+
+        <!-- 弹窗表单 -->
+        <el-dialog title="编辑参数" :visible.sync="canshu_dialogFormVisible" width="500px" center>
+            <el-form :model="canshu_form" :label-position="formlabelPosition" label-width="80px">
+                <el-form-item label="编码">
+                    <el-input v-model="canshu_form.code"></el-input>
+                </el-form-item>
+                <el-form-item label="默认值">
+                    <el-input v-model="canshu_form.morenzhi"></el-input>
+                </el-form-item>
+                <el-form-item label="备注">
+                    <el-input v-model="canshu_form.beizhu"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="canshu_dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="canshu_btnok()">确 定</el-button>
+            </div>
+        </el-dialog>
+        <!-- 弹窗表单 -->
+        <el-dialog title="编辑节点" :visible.sync="jiedian_dialogFormVisible" width="500px" center>
+            <el-form :model="canshu_form" :label-position="formlabelPosition" label-width="80px">
+                <el-form-item label="编码">
+                    <el-input v-model="jiedian_form.code" :disabled="true"></el-input>
+                </el-form-item>
+                <el-form-item label="名称">
+                    <el-input v-model="jiedian_form.mingcheng"></el-input>
+                </el-form-item>
+                <el-form-item label="是否起始">
+                    <el-switch v-model="jiedian_form.qishi" active-color="#13ce66"  inactive-color="#ff4949">
+                    </el-switch>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="jiedian_dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="jiedian_btnok()">确 定</el-button>
+            </div>
+        </el-dialog>
+    </div>
+</body>
+<style>
+    .el-header {
+        background-color: #B3C0D1;
+        color: #333;
+        line-height: 60px;
+    }
+
+    .el-aside {
+        color: #333;
+    }
+
+    .zm_upload .el-upload-dragger {
+        height: 50px;
+    }
+</style>
+<!-- import Vue before Element -->
+<script src="../JS/vue.js"></script>
+<!-- import JavaScript -->
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui@2.3.7/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui@2.3.7/lib/index.js"></script>
+<script>
+    getUrlKey = function (name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
+    }
+    var pid = getUrlKey("uid");
+    var workflow = getUrlKey("workflow");
+    var banben = getUrlKey("banben");
+    if (banben =="undefined") {
+        banben = "未发布";
+    }
+    new Vue({
+        el: '#app',
+        data: {
+            ad: { name: "管理员" },
+            liebiaoindex: ["3"],
+            uploadurl: config.uploadUrl,
+            menus: menus,
+            uploadheader: { "Content-Type": "multipart/form-data" },
+            uploadname: "file",
+            form: {},
+            canshu_form: {},
+            jiedian_form: {},
+            formlabelPosition: "left",
+            islogin: true,
+            dialogFormVisible: false,
+            canshu_dialogFormVisible: false,
+            jiedian_dialogFormVisible: false,
+            formLabelWidth: "80px",
+            workflow: workflow,
+            banbens: [],
+            banben: banben,
+            activeName: "first",
+            canshu_tableData3: [],
+            jiedian_tableData3: [],
+            tableData3: []
+            //任务列表相关
+
+        },
+        created: function () {
+            // `this` 指向 vm 实例
+
+            var that = this;
+
+            $.get(config.host + "guanliyuan/jiancha", { pid: pid }, function (r) {
+                console.log(r);
+                if (r.data.isok) {
+                    that.islogin = false;
+                    that.ad = r.data.jg;
+                    //加载用户列表
+                    $.get(config.host + "liucheng/selbanbens", { code: workflow }, function (r) {
+                        that.banbens = r.data.jg;
+                        if (banben == "未发布" && that.banbens[0]) {
+                            that.banben = that.banbens[0].value;
+                        }
+                        that.SelectBanBen(that.banben);
+                    });
+                    
+                } else {
+                    window.location.href = "./login.html";
+                }
+            })
+        },
+        methods: {
+            addbanben(a) {
+                //加载用户列表
+                $.get(config.host + "liucheng/addbanben", { code: workflow }, function (r) {
+                    window.location.href = './index.html?workflow=' + workflow + '&banben=' + r.data.jg;
+                });
+            },
+            SelectBanBen(o) {
+                var that = this;
+                //加载用户列表
+                $.get(config.host + "liucheng/selbanbeninfo", { code: workflow, banben: that.banben }, function (r) {
+                    that.canshu_tableData3 = r.data.jg.params;
+                    that.jiedian_tableData3 = r.data.jg.jiedian;
+                });
+            },
+            canshu_SelectRow(o) {
+                this.canshu_form = o;
+            },
+            canshu_add() {
+                this.canshu_form = { cmd: "addcanshu" };
+                this.canshu_dialogFormVisible = true;
+            },
+            canshu_xiugai() {
+                this.canshu_form.cmd = "updcanshu";
+                if (this.canshu_form.pid) {
+                    this.canshu_dialogFormVisible = true;
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '请先点击要修改的数据'
+                    });
+                }
+            },
+            canshu_shanchu() {
+                if (this.canshu_form.pid) {
+                    var that = this;
+                    this.$confirm('是否删除:' + this.canshu_form.code + '?', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        $.get(config.host + "liucheng/delcanshu", { pid: this.canshu_form.pid, workflow: workflow,banben:that.banben }, function (r) {
+                            console.log("liucheng/delcanshu", r);
+                            window.location.reload();
+                        });
+                        this.$message({
+                            type: 'success',
+                            message: '删除成功!'
+                        });
+                    }).catch(() => {
+                        this.$message({
+                            type: 'info',
+                            message: '已取消删除'
+                        });
+                    });
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '请先点击要删除的数据'
+                    });
+                }
+            },
+            canshu_btnok() {
+                var that = this;
+                this.canshu_dialogFormVisible = false;
+                this.canshu_form.workflow = workflow;
+                this.canshu_form.banben = this.banben;
+                //更新用户
+                $.get(config.host + "liucheng/" + this.canshu_form.cmd, this.canshu_form, function (r) {
+                    if (r.data.isok) {
+                        window.location.reload();
+                    } else {
+                        that.$message({
+                            type: 'error',
+                            message: '保存失败' + (r.data.jg ? r.data.jg : r.data.error)
+                        });
+                    }
+                   
+                });
+            },
+            jiedian_SelectRow(o) {
+                this.jiedian_form = o;
+            },
+             jiedian_add() {
+                this.jiedian_form = { cmd: "addjiedian" };
+                this.jiedian_dialogFormVisible = true;
+            },
+             jiedian_xiugai() {
+                 this.jiedian_form.cmd = "updjiedian";
+                if (this.jiedian_form.pid) {
+                    this.jiedian_dialogFormVisible = true;
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '请先点击要修改的数据'
+                    });
+                }
+            },
+            jiedian_shanchu() {
+                if (this.jiedian_form.pid) {
+                    var that = this;
+                    this.$confirm('是否删除:' + this.jiedian_form.mingcheng + '?', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        $.get(config.host + "jiedian/deljiedian", { pid: this.jiedian_form.pid, workflow: workflow, banben: that.banben }, function (r) {
+                            that.SelectBanBen(that.banben);
+                        });
+                        this.$message({
+                            type: 'success',
+                            message: '删除成功!'
+                        });
+                    }).catch(() => {
+                        this.$message({
+                            type: 'info',
+                            message: '已取消删除'
+                        });
+                    });
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '请先点击要删除的数据'
+                    });
+                }
+            },
+            jiedian_btnok() {
+                var that = this;
+                this.jiedian_dialogFormVisible = false;
+                this.jiedian_form.workflow = workflow;
+                this.jiedian_form.banben = this.banben;
+                //更新用户
+                $.post(config.host + "jiedian/" + this.jiedian_form.cmd, this.jiedian_form, function (r) {
+                    if (r.data.isok) {
+                        that.SelectBanBen(that.banben);
+                    } else {
+                        that.$message({
+                            type: 'error',
+                            message: '保存失败' + (r.data.jg ? r.data.jg : r.data.error)
+                        });
+                    }
+
+                });
+            }
+        }
+    })
+</script>
+</html>

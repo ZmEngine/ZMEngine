@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ZMEngine</title>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="./_Res/JS/jquery-2.1.4.min.js"></script>
+    <script src="./JS/config.js"></script>
+</head>
+<body>
+    <div id="app">
+        <el-container style="border: 1px solid #eee" v-loading.fullscreen.lock="islogin">
+            <el-header>
+                <div style="height:30px;">
+                    <span style="float: left; font-size: 20px;font-weight:bolder;">ZMEngine</span>
+                    &nbsp;
+                    <span style="float: right; font-size: 14px">
+                        {{ad.name}}  &nbsp;  &nbsp;&nbsp;&nbsp;
+                        <a href="./logout.html">退出</a>
+                    </span>
+                </div>
+            </el-header>
+
+
+            <el-container>
+                <el-aside width="200px" style="height:700px; background-color: rgb(238, 241, 246)">
+                    <el-menu :default-openeds="liebiaoindex">
+                        <el-menu-item v-for="item in menus" v-bind:index="item.index" @click="openpage(item.html)">
+                            <template slot="title">
+                                <i v-bind:class="item.icon"></i>{{item.name}}
+                            </template>
+                        </el-menu-item>
+                    </el-menu>
+                </el-aside>
+
+                <el-main>
+                    <el-row style="margin-bottom:20px;">
+
+                        <el-button type="success" size="mini" @click="addfuwu()">新增</el-button>
+                        <el-button type="warning" size="mini" @click="xiugai()">修改</el-button>
+                        <el-button type="danger" size="mini" @click="shanchu()">删除</el-button>
+                    </el-row>
+                    <template>
+                        <el-table :data="tableData3"
+                                  height="700"
+                                  border
+                                  highlight-current-row
+                                  @current-change="SelectRow"
+                                  style="width: 100%">
+                            <el-table-column type="index" label="序号" width="50">
+                            </el-table-column>      
+                            <el-table-column prop="mingcheng"
+                                             label="名称"
+                                             width="180">
+                            </el-table-column>
+                            <el-table-column prop="dizhi"
+                                             label="地址" width="380">
+                            </el-table-column>
+                            <el-table-column prop="canshu"
+                                             label="参数">
+                            </el-table-column>
+
+                        </el-table>
+                    </template>
+                </el-main>
+            </el-container>
+        </el-container>
+
+        <!-- 弹窗表单 -->
+        <el-dialog title="编辑" :visible.sync="dialogFormVisible" width="500px" center>
+            <el-form :model="form" :label-position="formlabelPosition" label-width="80px">
+                <el-form-item label="名称">
+                    <el-input v-model="form.mingcheng"></el-input>
+                </el-form-item>
+                <el-form-item label="地址">
+                    <el-input v-model="form.dizhi"></el-input>
+                </el-form-item>
+                <el-form-item label="参数">
+                    <el-input v-model="form.canshu" ></el-input>
+                </el-form-item>
+            </el-form>
+            <div>注意:（参数用英文逗号隔开）</div>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="btnok()">确 定</el-button>
+            </div>
+        </el-dialog>
+    </div>
+</body>
+<style>
+    .el-header {
+        background-color: #B3C0D1;
+        color: #333;
+        line-height: 60px;
+    }
+
+    .el-aside {
+        color: #333;
+    }
+
+    .zm_upload .el-upload-dragger {
+        height: 50px;
+    }
+</style>
+<!-- import Vue before Element -->
+<script src="./JS/vue.js"></script>
+<!-- import JavaScript -->
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui@2.3.7/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui@2.3.7/lib/index.js"></script>
+<script>
+    getUrlKey = function (name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
+    }
+    var pid = getUrlKey("uid");
+    new Vue({
+        el: '#app',
+        data: {
+            ad: { name: "管理员" },
+            liebiaoindex: ["3"],
+            uploadurl: config.uploadUrl,
+            menus: menus,
+            uploadheader: { "Content-Type": "multipart/form-data" },
+            uploadname: "file",
+            form: {},
+            formlabelPosition: "left",
+            islogin: true,
+            dialogFormVisible: false,
+            formLabelWidth: "80px",
+            tableData3: []
+            //任务列表相关
+
+        },
+        created: function () {
+            // `this` 指向 vm 实例
+
+            var that = this;
+
+            $.get(config.host + "guanliyuan/jiancha", { pid: pid }, function (r) {
+                console.log(r);
+                if (r.data.isok) {
+                    //加载用户列表
+                    $.get(config.host + "fuwu/fuwu", { pid: pid }, function (r) {
+                        that.tableData3 = r.data.jg;
+                    });
+                    that.islogin = false;
+                    that.ad = r.data.jg;
+                } else {
+                    window.location.href = "./login.html";
+                }
+            })
+        },
+        methods: {
+            openpage(a) {
+                window.location.href = "./" + a + "?uid=" + getUrlKey("uid");
+            },
+            SelectRow(o) {
+                this.form = o;
+            },
+            addfuwu() {
+                this.form = { cmd: "addfuwu" };
+                this.dialogFormVisible = true;
+            },
+            xiugai() {
+                this.form.cmd = "updfuwu";
+                if (this.form.pid) {
+                    this.dialogFormVisible = true;
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '请先点击要修改的数据'
+                    });
+                }
+            },
+            shanchu() {
+                if (this.form.pid) {
+                    var that = this;
+                    this.$confirm('是否删除:' + this.form.mingcheng + '?', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        $.get(config.host + "fuwu/delfuwu", { pid: this.form.pid }, function (r) {
+                            console.log("fuwu/delfuwu", r);
+                            window.location.reload();
+                        });
+                        this.$message({
+                            type: 'success',
+                            message: '删除成功!'
+                        });
+                    }).catch(() => {
+                        this.$message({
+                            type: 'info',
+                            message: '已取消删除'
+                        });
+                    });
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '请先点击要删除的数据'
+                    });
+                }
+            },
+            shanchuanok(response, file, fileList) {
+                let icon = file.response.data.pid;
+                console.log("shanchuanok", icon);
+                this.form.icon = icon;
+            },
+            shanchuanguanggaook(response, file, fileList) {
+                let icon = file.response.data.pid;
+                console.log("shanchuanguanggaook", icon);
+                this.form.guanggao = icon;
+            },
+            shangchuanerror(response, file, fileList) {
+                console.log("shangchuanerror_response", response);
+                console.log("file", file);
+                console.log("fileList", fileList);
+            },
+            shangchuanlimit(file, fileList) {
+                this.$message({
+                    type: 'error',
+                    message: '只能上传一个文件'
+                });
+            },
+            btnok() {
+                var that = this;
+                this.dialogFormVisible = false;
+                //更新用户
+                $.get(config.host + "fuwu/" + this.form.cmd, this.form, function (r) {
+                    if (r.data.isok) {
+                        window.location.reload();
+                    } else {
+                        that.$message({
+                            type: 'error',
+                            message: '保存失败' + (r.data.jg ? r.data.jg : r.data.error)
+                        });
+                    }
+                    console.log(this.form.cmd, r);
+
+                });
+            }
+        }
+    })
+</script>
+</html>

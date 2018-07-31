@@ -1,0 +1,3 @@
+修改nginx-service.exe.xml里面的文件路径
+
+D:\nginx\nginx-service.exe install
