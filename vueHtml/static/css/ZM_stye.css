@@ -1,0 +1,17 @@
+.zm_head_01{
+	float:right !important;
+}
+.zm_aliICO_phone{
+	    background: url(../IMG/aliICO.png) no-repeat;
+	    background-position: -142px -175px;
+	    padding-left: 25px;
+	    
+	    float: none;
+}
+.Big_show_img{
+	width: 100%; height: 400px;
+}
+body{
+	    background-image: url(https://cbu01.alicdn.com/img/ibank/2015/509/152/1967251905_1696499705.jpg);
+    background-repeat: repeat;
+}

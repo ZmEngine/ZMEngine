@@ -1,1 +1,3 @@
 server/tools/logs/*.log
+*.suo
+/.vs
