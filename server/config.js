@@ -6,7 +6,7 @@ const CONF = {
         port: 3306,
         user: '',
         db: '',
-        pass: '',//'xJScl8aA',
+        pass: '', // 'xJScl8aA',
         char: ''
     }
 }

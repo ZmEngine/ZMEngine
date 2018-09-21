@@ -15,40 +15,7 @@
         </div>
       </el-header>
       <el-container>
-        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-          <el-menu :default-openeds="liebiaoindex">            
-            <el-menu-item index="2" @click="openpage('fuwu',['2'])">
-              <template slot="title">
-                <i class="el-icon-menu"></i>服务列表
-              </template>
-            </el-menu-item>
-            <el-menu-item index="3" @click="openpage('liucheng',['3'])">
-              <template slot="title">
-                <i class="el-icon-menu"></i>流程列表
-              </template>
-            </el-menu-item>
-            <el-submenu index="4">
-              <template slot="title">
-                <i class="el-icon-setting"></i>
-                <span>系统配置</span>
-              </template>
-              <el-menu-item-group>
-                <el-menu-item index="41" @click="openpage('sucai',['4','41'])">
-                      <template slot="title">
-                        <i class="el-icon-menu"></i>素材管理
-                      </template>
-                </el-menu-item>
-                <el-menu-item index="45" @click="openpage('xiugaimima',['4','43'])">
-                  <template slot="title">
-                    <i class="el-icon-setting"></i>修改密码
-                  </template>
-                </el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
-
-          </el-menu>
-        </el-aside>
-
+        
         <el-main >
           <template>
             <div style="min-height: 700px;">

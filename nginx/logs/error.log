@@ -72,3 +72,154 @@
 2018/07/30 19:42:54 [info] 11656#11772: *2 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
 2018/07/30 21:02:14 [notice] 11684#11688: worker process 11656 exited with code 40010004
 2018/07/30 21:02:14 [notice] 11684#11688: worker process 11656 exited with code 40010004
+2018/09/18 18:10:34 [notice] 19952#17064: using the "select" event method
+2018/09/18 18:10:34 [notice] 19952#17064: using the "select" event method
+2018/09/18 18:10:34 [notice] 19952#17064: nginx/1.10.3
+2018/09/18 18:10:34 [notice] 19952#17064: nginx/1.10.3
+2018/09/18 18:10:34 [info] 19952#17064: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/09/18 18:10:34 [notice] 19952#17064: start worker processes
+2018/09/18 18:10:34 [notice] 19952#17064: start worker processes
+2018/09/18 18:10:34 [notice] 19952#17064: start worker process 19296
+2018/09/18 18:10:34 [notice] 19952#17064: start worker process 19296
+2018/09/18 18:10:35 [notice] 19296#14048: nginx/1.10.3
+2018/09/18 18:10:35 [notice] 19296#14048: nginx/1.10.3
+2018/09/18 18:10:35 [info] 19296#14048: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/09/18 18:10:35 [notice] 19296#14048: create thread 17340
+2018/09/18 18:10:35 [notice] 19296#14048: create thread 17340
+2018/09/18 18:10:35 [notice] 19296#14048: create thread 20136
+2018/09/18 18:10:35 [notice] 19296#14048: create thread 20136
+2018/09/18 18:10:35 [notice] 19296#14048: create thread 19604
+2018/09/18 18:10:35 [notice] 19296#14048: create thread 19604
+2018/09/18 18:11:03 [error] 19296#17340: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/login.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/login.html?skey=null HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:03 [error] 19296#17340: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/login.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/login.html?skey=null HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:03 [error] 19296#17340: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/login.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/login.html?skey=null HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:03 [error] 19296#17340: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/login.html?skey=null"
+2018/09/18 18:11:03 [error] 19296#17340: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/login.html?skey=null"
+2018/09/18 18:11:03 [error] 19296#17340: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/login.html?skey=null"
+2018/09/18 18:11:08 [info] 19296#17340: *2 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:08 [info] 19296#17340: *1 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:20 [error] 19296#17340: *6 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:20 [error] 19296#17340: *6 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:20 [error] 19296#17340: *6 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:20 [error] 19296#17340: *8 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:20 [error] 19296#17340: *8 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:20 [error] 19296#17340: *8 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:25 [error] 19296#17340: *7 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:28 [info] 19296#17340: *3 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:28 [info] 19296#17340: *8 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:28 [info] 19296#17340: *4 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:28 [info] 19296#17340: *5 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:28 [info] 19296#17340: *6 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:28 [info] 19296#17340: *7 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:31 [error] 19296#17340: *9 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:31 [error] 19296#17340: *9 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:31 [error] 19296#17340: *9 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:31 [error] 19296#17340: *10 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:31 [error] 19296#17340: *10 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:31 [error] 19296#17340: *10 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/18 18:11:31 [error] 19296#17340: *10 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:31 [error] 19296#17340: *10 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:31 [error] 19296#17340: *10 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:38 [info] 19296#17340: *11 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:38 [info] 19296#17340: *12 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:38 [info] 19296#17340: *13 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:38 [info] 19296#17340: *9 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:38 [info] 19296#17340: *10 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:38 [info] 19296#17340: *14 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:56 [error] 19296#17340: *15 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/index.html?skey=0"
+2018/09/18 18:11:56 [error] 19296#17340: *15 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/index.html?skey=0"
+2018/09/18 18:11:56 [error] 19296#17340: *15 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/zm_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/zm_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/index.html?skey=0"
+2018/09/18 18:11:56 [error] 19296#17340: *16 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/index.html?skey=0"
+2018/09/18 18:11:56 [error] 19296#17340: *16 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/index.html?skey=0"
+2018/09/18 18:11:56 [error] 19296#17340: *16 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/index_style.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/index_style.css HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/index.html?skey=0"
+2018/09/18 18:11:56 [error] 19296#17340: *16 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:56 [error] 19296#17340: *16 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:56 [error] 19296#17340: *16 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\vueHtml\/static/css/bootstrap.min.css.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /zmengine/static/css/bootstrap.min.css.map HTTP/1.1", host: "127.0.0.1:8066"
+2018/09/18 18:11:58 [info] 19296#17340: *17 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:58 [info] 19296#17340: *15 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:58 [info] 19296#17340: *16 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:11:58 [info] 19296#17340: *20 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:58 [info] 19296#17340: *18 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:11:58 [info] 19296#17340: *19 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:24:58 [notice] 19736#21456: signal process started
+2018/09/18 18:24:58 [notice] 19952#17064: reconfiguring
+2018/09/18 18:24:58 [notice] 19952#17064: reconfiguring
+2018/09/18 18:24:58 [notice] 19952#17064: using the "select" event method
+2018/09/18 18:24:58 [notice] 19952#17064: using the "select" event method
+2018/09/18 18:24:58 [notice] 19952#17064: start worker processes
+2018/09/18 18:24:58 [notice] 19952#17064: start worker processes
+2018/09/18 18:24:58 [notice] 19952#17064: start worker process 20476
+2018/09/18 18:24:58 [notice] 19952#17064: start worker process 20476
+2018/09/18 18:24:58 [notice] 20476#19516: nginx/1.10.3
+2018/09/18 18:24:58 [notice] 20476#19516: nginx/1.10.3
+2018/09/18 18:24:58 [info] 20476#19516: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/09/18 18:24:58 [notice] 19296#14048: gracefully shutting down
+2018/09/18 18:24:58 [notice] 19296#14048: gracefully shutting down
+2018/09/18 18:24:58 [notice] 19296#20136: exiting
+2018/09/18 18:24:58 [notice] 19296#20136: exiting
+2018/09/18 18:24:58 [notice] 20476#19516: create thread 18956
+2018/09/18 18:24:58 [notice] 20476#19516: create thread 18956
+2018/09/18 18:24:58 [notice] 20476#19516: create thread 20288
+2018/09/18 18:24:58 [notice] 20476#19516: create thread 20288
+2018/09/18 18:24:58 [notice] 20476#19516: create thread 17444
+2018/09/18 18:24:58 [notice] 20476#19516: create thread 17444
+2018/09/18 18:24:58 [notice] 19296#17340: exiting
+2018/09/18 18:24:58 [notice] 19296#17340: exiting
+2018/09/18 18:24:58 [notice] 19296#14048: exit
+2018/09/18 18:24:58 [notice] 19296#14048: exit
+2018/09/18 18:24:58 [notice] 19952#17064: worker process 19296 exited with code 0
+2018/09/18 18:24:58 [notice] 19952#17064: worker process 19296 exited with code 0
+2018/09/18 18:25:09 [info] 20476#18956: *26 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/18 18:25:09 [info] 20476#18956: *22 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:25:09 [info] 20476#18956: *24 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:25:09 [info] 20476#18956: *21 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:25:09 [info] 20476#18956: *25 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:25:09 [info] 20476#18956: *23 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:25:19 [info] 20476#18956: *28 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:27:04 [info] 20476#18956: *31 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:27:09 [info] 20476#18956: *35 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:27:24 [info] 20476#18956: *38 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:27:34 [info] 20476#18956: *41 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:27:59 [info] 20476#18956: *44 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:28:24 [info] 20476#18956: *46 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:40:04 [info] 20476#18956: *48 client 127.0.0.1 closed keepalive connection
+2018/09/18 18:43:55 [info] 20476#18956: *51 client 127.0.0.1 closed keepalive connection
+2018/09/19 18:57:01 [notice] 20972#19164: using the "select" event method
+2018/09/19 18:57:01 [notice] 20972#19164: using the "select" event method
+2018/09/19 18:57:01 [notice] 20972#19164: nginx/1.10.3
+2018/09/19 18:57:01 [notice] 20972#19164: nginx/1.10.3
+2018/09/19 18:57:01 [info] 20972#19164: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/09/19 18:57:01 [notice] 20972#19164: start worker processes
+2018/09/19 18:57:01 [notice] 20972#19164: start worker processes
+2018/09/19 18:57:01 [notice] 20972#19164: start worker process 19924
+2018/09/19 18:57:01 [notice] 20972#19164: start worker process 19924
+2018/09/19 18:57:01 [notice] 19924#21324: nginx/1.10.3
+2018/09/19 18:57:01 [notice] 19924#21324: nginx/1.10.3
+2018/09/19 18:57:01 [info] 19924#21324: OS: 260110 build:7601, "Service Pack 1", suite:100, type:1
+2018/09/19 18:57:01 [notice] 19924#21324: create thread 16112
+2018/09/19 18:57:01 [notice] 19924#21324: create thread 16112
+2018/09/19 18:57:01 [notice] 19924#21324: create thread 12544
+2018/09/19 18:57:01 [notice] 19924#21324: create thread 12544
+2018/09/19 18:57:01 [notice] 19924#21324: create thread 16936
+2018/09/19 18:57:01 [notice] 19924#21324: create thread 16936
+2018/09/19 18:57:17 [error] 19924#16112: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/19 18:57:17 [error] 19924#16112: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/19 18:57:17 [error] 19924#16112: *1 CreateFile() "D:\XiangMu\ZMEngine\ZMEnigeGitHub\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: api.yunkucun.top, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8066", referrer: "http://127.0.0.1:8066/zmengine/"
+2018/09/19 18:57:31 [info] 19924#16112: *2 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:57:31 [info] 19924#16112: *6 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:57:31 [info] 19924#16112: *3 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:57:31 [info] 19924#16112: *4 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:57:31 [info] 19924#16112: *5 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:58:00 [info] 19924#16112: *11 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:58:00 [info] 19924#16112: *12 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:58:00 [info] 19924#16112: *13 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:58:00 [info] 19924#16112: *15 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066
+2018/09/19 18:58:00 [info] 19924#16112: *14 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8066

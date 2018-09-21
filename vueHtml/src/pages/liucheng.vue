@@ -3,34 +3,37 @@
     <el-row style="margin-bottom:20px;">
       <el-input type='text' size='small' width='300' style="width:300px" v-model="chaxunkey" inline="false" placeholder="文章标题"
         clearable></el-input>
-      <el-select v-model="cxsjkey" filterable placeholder="所属分类"  size='small' >
-        <el-option v-for="item in allops" :key="item.code" :label="item.mc" :value="item.code">
-        </el-option>
-      </el-select>
       <el-button type="primary" size="mini" @click="chaxun()">查找</el-button>
       <el-button type="success" size="mini" @click="add()">新增</el-button>
       <el-button type="warning" size="mini" @click="xiugai()">修改</el-button>
-      <el-button type="danger" size="mini" @click="shanchu()">删除</el-button>
 
     </el-row>
     <template>
-      <el-table id='fenlei' :data="tableData3" height="700" border highlight-current-row @current-change="SelectRow"
-        style="width: 100%">
-        <el-table-column type="index" width="50">
-        </el-table-column>        
-         <el-table-column prop="biaoti" label="标题" width="380">
-        </el-table-column>
-        <el-table-column prop="flmc" label="所属分类" width="180">
-        </el-table-column>
-        <el-table-column prop="fbsj" label="发布时间" width="180">
-        </el-table-column>
-        <el-table-column prop="yueduliang" label="阅读量" width="180">
-        </el-table-column>
-        <el-table-column prop="dianzan" label="点赞量" width="180">
-        </el-table-column>
-        <el-table-column prop="gaiyao" label="概要说明">
-        </el-table-column>
-      </el-table>
+      <el-table :data="tableData3"
+                                  height="700"
+                                  border
+                                  highlight-current-row
+                                  @current-change="SelectRow"
+                                  style="width: 100%">
+                            <el-table-column fixed="left"
+                                             label="操作"
+                                             width="180">
+                                <template slot-scope="scope">
+                                   <a :href="'./#/kongbai/peizhi/'+scope.row.code+'/'+scope.row.banben" target="_blank">设定</a>
+                                </template>
+                            </el-table-column>
+                            <el-table-column prop="code"
+                                             label="流程编码"
+                                             width="180">
+                            </el-table-column>
+                            <el-table-column prop="mingcheng"
+                                             label="流程名称" width="380">
+                            </el-table-column>
+                            <el-table-column prop="banben"
+                                             label="默认版本">
+                            </el-table-column>
+
+                        </el-table>
       <div class="block">
         <el-pagination @current-change="gettabList" :page-size='10' :current-page='tableindex' layout="prev, pager, next, jumper"
           :total="tabzs">
@@ -38,34 +41,24 @@
       </div>
     </template>
     <!-- 弹窗表单 -->
-    <el-dialog title="分类信息" :visible.sync="dialogFormVisible" width="800px" center>
-      <el-form :model="form" :label-position="formlabelPosition" label-width="80px">
-        <el-form-item label="标题">
-          <el-input v-model="form.biaoti"></el-input>
-        </el-form-item>        
-        <el-form-item label="所属分类">
-        <el-select v-model="form.flcode" filterable placeholder="所属分类">
-          <el-option v-for="item in allops" :key="item.code" :label="item.mc" :value="item.code">
-          </el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="列表图">
-          <el-input v-model="form.fengmian"></el-input>
-        </el-form-item> 
-      <el-form-item label="概要说明">
-        <el-input type="textarea" rows='5' v-model="form.gaiyao"></el-input>
-      </el-form-item>
-        <el-form-item label="文章正文">
-          <template>
-            <vue-html5-editor :content="form.neirong" :z-index="10" @change="updatesjjs" ></vue-html5-editor>
-          </template>
-        </el-form-item>        
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="btnok()">确 定</el-button>
-      </div>
-    </el-dialog>
+    <el-dialog title="编辑" :visible.sync="dialogFormVisible" width="500px" center>
+            <el-form :model="form" :label-position="formlabelPosition" label-width="80px">
+                <el-form-item label="流程编码">
+                    <el-input v-model="form.code"></el-input>
+                </el-form-item>
+                <el-form-item label="流程名称">
+                    <el-input v-model="form.mingcheng"></el-input>
+                </el-form-item>
+                <el-form-item label="默认版本">
+                    <el-input v-model="form.banben" ></el-input>
+                </el-form-item>
+            </el-form>
+            <div>注意:（默认版本不填写则用最新版本）</div>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="btnok()">确 定</el-button>
+            </div>
+        </el-dialog>
   </div>
 </template>
 
@@ -77,11 +70,11 @@
     postInfo
   } from "../service/getData";
   export default {
-    name: "wenzhang",
+    name: "liucheng",
     components: {},
     data() {
       return {
-        tabname: "wenzhang/",
+        tabname: "liucheng/",
         chaxunkey: "",
         cxsjkey: "",
         loadurl: "",
@@ -107,11 +100,6 @@
       
     },
     methods: {
-     async LoadSelops() {
-        this.allops =[{code:'',mc:'不限'}]
-      let ops= await getListbytongbu('fenlei/selall', {})
-     if(ops.data.tab&&ops.data.tab.length>0) this.allops = this.allops.concat(ops.data.tab); 
-      },
       SelectRow(o) {
         console.log(o)
         if (o) {
@@ -171,7 +159,6 @@
         });
       },
       gettabList(yema) {
-        this.LoadSelops()
         let that = this
         if (!yema) {
           yema = that.tableindex
