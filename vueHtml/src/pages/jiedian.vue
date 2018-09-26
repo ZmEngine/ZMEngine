@@ -9,7 +9,7 @@
       <el-tabs v-model="activeName">
         <el-tab-pane label="参数配置" name="first">
           <el-form :model="canshu_form" label-width="100px">
-            <el-form-item v-for="(arr, index) in canshu_form.arr" :label="arr.code" :key="arr.pid">
+            <el-form-item v-for=" arr  in canshu_form.arr" :label="arr.code" :key="arr.pid">
               <el-input v-model="canshus[arr.code]" size="small" style="max-width:200px; margin-right:50px;"></el-input><span>{{arr.beizhu}}</span>
             </el-form-item>
             <el-form-item>

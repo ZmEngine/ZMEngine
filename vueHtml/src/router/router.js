@@ -1,6 +1,7 @@
 const home = () => import(/* webpackChunkName: "kaishi" */ '../pages/home.vue')
 const login = () => import(/* webpackChunkName: "kaishi" */ '../pages/login.vue')
 const huanying = () => import(/* webpackChunkName: "home" */ '../pages/huanying.vue')
+const shuoming = () => import(/* webpackChunkName: "home" */ '../pages/shuoming.vue')
 const xiugaimima = () => import(/* webpackChunkName: "home" */ '../pages/xiugaimima.vue')
 const sucai = () => import(/* webpackChunkName: "home" */ '../pages/sucai.vue')
 const fuwu = () => import(/* webpackChunkName: "home" */ '../pages/fuwu.vue')
@@ -29,6 +30,7 @@ export default [
       // 当 /user/:id 匹配成功，
       // UserHome 会被渲染在 User 的 <router-view> 中
       { name:'huanying', path: '', component: huanying, meta : { title: '后台管理' } },
+      { name:'shuoming', path: '', component: shuoming, meta : { title: '调用说明' } },
       { name:'sucai', path: 'sucai', component: sucai, meta : { title: '素材管理' } },
       { name:'xiugaimima', path: 'xiugaimima', component: xiugaimima, meta : { title: '修改密码' } },
       { name:'fuwu', path: 'fuwu', component: fuwu, meta : { title: '服务列表' } },

@@ -16,7 +16,12 @@
       </el-header>
       <el-container>
         <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-          <el-menu :default-openeds="liebiaoindex">            
+          <el-menu :default-openeds="liebiaoindex">  
+              <el-menu-item index="1" @click="openpage('shuoming',['1'])">
+              <template slot="title">
+                <i class="el-icon-menu"></i>调用说明
+              </template>
+            </el-menu-item>          
             <el-menu-item index="2" @click="openpage('fuwu',['2'])">
               <template slot="title">
                 <i class="el-icon-menu"></i>服务列表
