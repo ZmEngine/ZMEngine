@@ -1,6 +1,6 @@
 const fs = require('fs')
 const router = require('koa-router')({
-    prefix: '/weapp'
+    prefix: '/EngineApi'
 })
 const controllers = require('../controllers')
 function addMapping (router, mapping, url) {

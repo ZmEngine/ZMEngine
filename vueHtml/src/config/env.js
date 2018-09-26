@@ -19,9 +19,9 @@ if (process.env.NODE_ENV === 'development') {
   upFileUrl = 'http://127.0.0.1:5758/weapp/upload/save'
   FileUrl = 'http://127.0.0.1:8077/zmupload/'
 } else if (process.env.NODE_ENV === 'production') {
-  baseUrl = '/weapp/'
-  upFileUrl = '/weapp/upload/save'
-  FileUrl = '/zmupload/'
+  baseUrl = '/EngineApi/'
+  upFileUrl = '/EngineApi/upload/save'
+  FileUrl = '/EngineApi/'
 }
 export default {
   vheight,

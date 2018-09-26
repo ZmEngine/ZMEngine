@@ -48,6 +48,7 @@ var ctr = {
 }
 var rq = {}
 module.exports = async (ctx, next) => {
+    rq = {}
     Object.assign(rq, ctx.query, ctx.request.body, ctx.params)
     var action = rq.action
     var fun = ctr[action]

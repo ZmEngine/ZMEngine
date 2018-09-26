@@ -30,7 +30,7 @@ export default [
       // 当 /user/:id 匹配成功，
       // UserHome 会被渲染在 User 的 <router-view> 中
       { name:'huanying', path: '', component: huanying, meta : { title: '后台管理' } },
-      { name:'shuoming', path: '', component: shuoming, meta : { title: '调用说明' } },
+      { name:'shuoming', path: 'shuoming', component: shuoming, meta : { title: '调用说明' } },
       { name:'sucai', path: 'sucai', component: sucai, meta : { title: '素材管理' } },
       { name:'xiugaimima', path: 'xiugaimima', component: xiugaimima, meta : { title: '修改密码' } },
       { name:'fuwu', path: 'fuwu', component: fuwu, meta : { title: '服务列表' } },

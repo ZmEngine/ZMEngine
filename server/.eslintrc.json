@@ -9,9 +9,10 @@
     "indent": [2, 4, { "SwitchCase": 1 }],
     "arrow-parens": 0,
     "no-path-concat":0,
+    "no-eval": 0,
     "generator-star-spacing": 0
   },
   "env": {
-    "mocha": true
+    "mocha": true    
   }
 }
