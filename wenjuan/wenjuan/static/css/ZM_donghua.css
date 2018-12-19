@@ -1,0 +1,91 @@
+/*<!--旋转进入 --> */
+@keyframes zd_xuanzhuanjinru{
+	0%   {
+		transform:rotate(-90deg);
+		-webkit-transform:rotate(-90deg);
+		display: none;
+	}
+	25%  {
+		display: block;
+		transform:rotate(-60deg);
+		-webkit-transform:rotate(-60deg);
+	}
+	50%  {
+		transform:rotate(-10deg);
+		display: block;
+		-webkit-transform:rotate(-10deg);
+	}
+	75%  {
+		transform:rotate(35deg);
+		display: block;
+		-webkit-transform:rotate(35deg);
+	}
+	100% {
+		transform:rotate(0deg);
+		display: block;
+		-webkit-transform:rotate(0deg);	
+	}
+}
+.zd_xuanzhuanjinru{
+	transform-origin:left top;
+	animation-name: zd_xuanzhuanjinru;
+	animation-fill-mode:forwards;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+/* 上划 */
+@keyframes zd_shanghua{
+	0%   {
+		top:100vh;
+	}
+	100% {	
+		top:0vh;
+	}
+}
+.zd_shanghua{
+	position:relative;
+	animation-name: zd_shanghua;
+	animation-fill-mode:forwards;
+	animation-duration: 1s;
+}
+/* transition 组件过渡类 */
+.zd_xuanzhuanjinru-enter{
+	transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	display: none;
+}
+.zd_xuanzhuanjinru-enter-active{
+	transform-origin:left top;
+	animation-name: zd_xuanzhuanjinru;
+	animation-fill-mode:forwards;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+}
+
+.zd_shanghua_A-enter{
+	top:100vh;
+}
+.zd_shanghua_A-enter-active{
+	position:relative;
+	animation-name: zd_shanghua;
+	animation-fill-mode:forwards;
+	animation-duration: 1s;
+}
+.zd_shanghua_B-enter{
+	top:100vh;
+}
+.zd_shanghua_B-enter-active{
+	position:relative;
+	animation-name: zd_shanghua;
+	animation-fill-mode:forwards;
+	animation-duration: 1.5s;
+}
+.zd_shanghua_C-enter{
+	top:100vh;
+}
+.zd_shanghua_C-enter-active{
+	position:relative;
+	animation-name: zd_shanghua;
+	animation-fill-mode:forwards;
+	animation-duration: 2s;
+}

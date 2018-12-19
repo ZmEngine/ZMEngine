@@ -18,6 +18,24 @@ var ctr = {
             tab: liucheng
         }
     },
+    selone: async (ctx, next) => {
+        let liucheng = zm.readjson('liucheng/liucheng.json')
+        let serchjg = zm.selectjsonarray(liucheng, 'code', rq.code)
+        if (serchjg[0]) {
+            ctx.state.data = {
+                msg: 'seloneliucheng jg:',
+                isok: true,
+                jg: serchjg[0]
+            }
+            return
+        } else {
+            ctx.state.data = {
+                msg: 'seloneliucheng jg:',
+                isok: false,
+                jg: '未找到对应的流程'
+            }
+        }
+    },
   // 添加标签类型
     add: async (ctx, next) => {
         let ou = zm.getSeesion(rq.skey)

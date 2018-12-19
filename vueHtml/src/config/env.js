@@ -15,8 +15,8 @@ let baseUrl = 'http://127.0.0.1:5758/weapp/'
 let upFileUrl = 'http://127.0.0.1:5758/weapp/upload/save'
 let FileUrl = 'http://127.0.0.1:8077/zmupload/'
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://127.0.0.1:5758/weapp/'
-  upFileUrl = 'http://127.0.0.1:5758/weapp/upload/save'
+  baseUrl = 'http://127.0.0.1:5758/EngineApi/'
+  upFileUrl = 'http://127.0.0.1:5758/EngineApi/upload/save'
   FileUrl = 'http://127.0.0.1:8077/zmupload/'
 } else if (process.env.NODE_ENV === 'production') {
   baseUrl = '/EngineApi/'

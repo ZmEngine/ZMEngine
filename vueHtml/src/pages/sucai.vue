@@ -25,7 +25,7 @@
         </el-table-column>
         <el-table-column prop="filekey" label="地址" >
           <template slot-scope="scope">
-            <div>{{loadurl}}{{scope.row.filekey}}</div>
+            <div>/ZmEngineSuCai/{{scope.row.filekey}}</div>
           </template>
         </el-table-column>
       </el-table>

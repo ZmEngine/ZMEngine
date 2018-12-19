@@ -4,18 +4,16 @@ const debug = require('debug')('koa-weapp-demo')
 const response = require('./middlewares/response')
 const bodyParser = require('koa-bodyparser')
 const config = require('./config')
-const cors = require('koa2-cors')
+// const cors = require('koa2-cors')
 
-app.use(cors({
-    origin: function (ctx) {
-        return '*'
-    },
-    exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
-    maxAge: 5000,
-    credentials: true,
-    allowMethods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'Authorization', 'Accept', 'Access-Control-Allow-Credentials']
-}))
+// app.use(cors({
+//     origin: '*',
+//     exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+//     maxAge: 5000,
+//     credentials: true,
+//     allowMethods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+//     allowHeaders: ['Content-Type', 'Authorization', 'Accept', 'Access-Control-Allow-Credentials']
+// }))
 // 使用响应处理中间件
 app.use(response)
 

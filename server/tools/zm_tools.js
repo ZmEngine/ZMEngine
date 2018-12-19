@@ -192,6 +192,21 @@ var zmPost = function (opts) {
        })
     })
 }
+// 定义Promise函数
+var zmGet = function (opts) {
+    return new Promise((resolve, reject) => {
+        request.get(opts.url, {},
+       function optionalCallback (err, response, body) {
+           let getstr = { er: err, res: response }
+           if (!err && response.statusCode === 200) {
+               resolve(body || getstr)
+           } else {
+               console.log(err)
+               resolve(err)
+           }
+       })
+    })
+}
 // 计算经纬距离
 var jisuanjuli = function (lat1, lat2) {
   // var js={a:lat1,b:lat2};
@@ -268,4 +283,4 @@ var mkdirsSync = function (dirname) {
         }
     }
 }
-module.exports = { getDate, uuid, httpGet, httpPost, zmPost, jisuanjuli, shengxu, jiangxu, md5jiami, logwrite, readjson, writejson, selectjsonarray, mkdirsSync, setSeesion, getSeesion, delSeesion }
+module.exports = { getDate, uuid, httpGet, httpPost, zmPost, zmGet, jisuanjuli, shengxu, jiangxu, md5jiami, logwrite, readjson, writejson, selectjsonarray, mkdirsSync, setSeesion, getSeesion, delSeesion }
