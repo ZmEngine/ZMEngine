@@ -12,6 +12,7 @@
     "license": "MIT",
     "dependencies": {
         "axios": "^0.15.3",
+        "formstream": "^1.1.0",
         "images": "^3.0.1",
         "jshint": "^2.9.5",
         "knex": "^0.13.0",

@@ -1,3 +1,7 @@
 server/tools/logs/*.log
 *.suo
 /.vs
+/netWebApi/.vs
+/netWebApi/fabuhou
+/netWebApi/ZmHelperApi/bin
+/netWebApi/ZmHelperApi/obj

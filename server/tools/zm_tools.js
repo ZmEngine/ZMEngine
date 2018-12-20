@@ -6,13 +6,16 @@ var path = require('path')
 
 class zmSeesion {
     static Initss () {
-      // console.log('初始化zmSeesion')
-        this.ssmap = [{un: '1', key: '1'}]
+        // console.log('初始化zmSeesion')
+        this.ssmap = [{
+            un: '1',
+            key: '1'
+        }]
     }
     static getbykey (key) {
         let ishava = false
         let obj = {}
-      // console.log('getbykey', this.ssmap)
+        // console.log('getbykey', this.ssmap)
         ishava = this.ssmap.some(function (a, i) {
             if (a.key === key) {
                 obj.ind = i
@@ -50,7 +53,7 @@ class zmSeesion {
             info: obj
         }
         let ou = this.getbyun(obj.un)
-      // console.log('getbykey', this.ssmap)
+        // console.log('getbykey', this.ssmap)
         if (ou) {
             if (ou.key) {
                 key = ou.key
@@ -68,15 +71,18 @@ class zmSeesion {
     }
 }
 zmSeesion.Initss()
+
 function setSeesion (obj) {
-  // console.log('setSeesion', obj)
+    // console.log('setSeesion', obj)
     return zmSeesion.setObj(obj)
 }
+
 function getSeesion (key) {
     let ss = zmSeesion.getbykey(key)
     if (ss) return ss.info
     return null
 }
+
 function delSeesion (key) {
     zmSeesion.delObj(key)
 }
@@ -107,34 +113,34 @@ var getDate = function (datestr, format) {
             let second = date.getSeconds()
             let ms = date.getMilliseconds()
             let v = format
-     // Year
+            // Year
             v = v.replace(/yyyy/g, year)
             v = v.replace(/YYYY/g, year)
             v = v.replace(/yy/g, (year + '').substring(2, 4))
             v = v.replace(/YY/g, (year + '').substring(2, 4))
 
-     // Month
+            // Month
             var monthStr = ('0' + month)
             v = v.replace(/MM/g, monthStr.substring(monthStr.length - 2))
 
-     // Day
+            // Day
             var dayStr = ('0' + day)
             v = v.replace(/dd/g, dayStr.substring(dayStr.length - 2))
 
-     // hour
+            // hour
             var hourStr = ('0' + hour)
             v = v.replace(/HH/g, hourStr.substring(hourStr.length - 2))
             v = v.replace(/hh/g, hourStr.substring(hourStr.length - 2))
 
-     // minute
+            // minute
             var minuteStr = ('0' + minute)
             v = v.replace(/mm/g, minuteStr.substring(minuteStr.length - 2))
 
-     // Millisecond
+            // Millisecond
             v = v.replace(/sss/g, ms)
             v = v.replace(/SSS/g, ms)
 
-     // second
+            // second
             var secondStr = ('0' + second)
             v = v.replace(/ss/g, secondStr.substring(secondStr.length - 2))
             v = v.replace(/SS/g, secondStr.substring(secondStr.length - 2))
@@ -149,7 +155,10 @@ var getDate = function (datestr, format) {
 var httpGet = function (opts) {
     return new Promise((resolve, reject) => {
         request(opts, function (err, response, body) {
-            let getstr = { er: err, res: response.statusCode }
+            let getstr = {
+                er: err,
+                res: response.statusCode
+            }
             console.log('返回结果：')
             if (!err && response.statusCode === 200) {
                 if (body !== 'null') {
@@ -170,7 +179,10 @@ var httpPost = function (opts) {
             method: 'POST',
             body: opts.formData
         }, function (err, response, body) {
-            let getstr = { er: err, res: response }
+            let getstr = {
+                er: err,
+                res: response
+            }
             if (!err && response.statusCode === 200) {
                 resolve(body || getstr)
             }
@@ -180,36 +192,60 @@ var httpPost = function (opts) {
 // 定义Promise函数
 var zmPost = function (opts) {
     return new Promise((resolve, reject) => {
-        request.post(opts.url, {form: opts.formData},
-       function optionalCallback (err, response, body) {
-           let getstr = { er: err, res: response }
-           if (!err && response.statusCode === 200) {
-               resolve(body || getstr)
-           } else {
-               console.log(err)
-               resolve(err)
-           }
-       })
+        request.post(opts.url, {
+            form: opts.formData
+        },
+            function optionalCallback (err, response, body) {
+                let getstr = {
+                    er: err,
+                    res: response
+                }
+                if (!err && response.statusCode === 200) {
+                    resolve(body || getstr)
+                } else {
+                    console.log(err)
+                    resolve(err)
+                }
+            })
+    })
+}
+// 定义Promise函数
+var zmPostByStream = function (opts, res) {
+    return new Promise((resolve, reject) => {
+        request({
+            url: opts.url,
+            method: 'POST',
+            json: true,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: opts.formData
+        }).pipe(res).on('end', function (r) {
+            resolve(r)
+        })
     })
 }
 // 定义Promise函数
 var zmGet = function (opts) {
     return new Promise((resolve, reject) => {
         request.get(opts.url, {},
-       function optionalCallback (err, response, body) {
-           let getstr = { er: err, res: response }
-           if (!err && response.statusCode === 200) {
-               resolve(body || getstr)
-           } else {
-               console.log(err)
-               resolve(err)
-           }
-       })
+            function optionalCallback (err, response, body) {
+                let getstr = {
+                    er: err,
+                    res: response
+                }
+                if (!err && response.statusCode === 200) {
+                    resolve(body || getstr)
+                } else {
+                    console.log(err)
+                    resolve(err)
+                }
+            })
     })
 }
 // 计算经纬距离
 var jisuanjuli = function (lat1, lat2) {
-  // var js={a:lat1,b:lat2};
+    // var js={a:lat1,b:lat2};
 
     var rad1 = parseFloat(lat1.x) * Math.PI / 180.0
     var rad2 = parseFloat(lat2.x) * Math.PI / 180.0
@@ -218,7 +254,7 @@ var jisuanjuli = function (lat1, lat2) {
 
     var r = 6378137
     let jg = r * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(rad1) * Math.cos(rad2) * Math.pow(Math.sin(b / 2), 2)))
-  // js.jg=jg;
+    // js.jg=jg;
     return jg
 }
 // 排序
@@ -229,6 +265,7 @@ function compare (property) {
         return value1 > value2
     }
 }
+
 function compare2 (property) {
     return function (a, b) {
         var value1 = a[property]
@@ -283,4 +320,24 @@ var mkdirsSync = function (dirname) {
         }
     }
 }
-module.exports = { getDate, uuid, httpGet, httpPost, zmPost, zmGet, jisuanjuli, shengxu, jiangxu, md5jiami, logwrite, readjson, writejson, selectjsonarray, mkdirsSync, setSeesion, getSeesion, delSeesion }
+module.exports = {
+    getDate,
+    uuid,
+    httpGet,
+    httpPost,
+    zmPost,
+    zmPostByStream,
+    zmGet,
+    jisuanjuli,
+    shengxu,
+    jiangxu,
+    md5jiami,
+    logwrite,
+    readjson,
+    writejson,
+    selectjsonarray,
+    mkdirsSync,
+    setSeesion,
+    getSeesion,
+    delSeesion
+}
