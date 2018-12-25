@@ -1,25 +1,27 @@
 <template>
   <div>
-    <div class='wenjuantimu' style="height:10vh;font-size:2.5vh;">{{jiedianinfo.timu}}</div>
+    <div class='wenjuantimu' style="height:10vh;font-size:2.5vh;text-align: center">{{jiedianinfo.timu}}</div>
     <div style="height:86vh;">
 
-      <div style='height: 45vh;'>
+      <div style='height: 45vh;display: flex;justify-content: center;'>
         <transition name="zd_xuanzhuanjinru" appear>
-          <img :src='jiedianinfo.fengmian' class="" style="width:80vw;height:40vh;" v-show="isreload" />
+          <div :src='jiedianinfo.fengmian' class="wentishuomingarea" v-bind:style ="{backgroundImage:'url('+jiedianinfo.fengmian+')'}" v-show="isreload" >
+          {{jiedianinfo.txt}}
+          </div>
         </transition>
       </div>
       <div class="zm_center_wrap">
         <transition name="zd_shanghua_A" appear>
           <div style='background-color:red;width: 86vw;min-height: 30px;text-align: left;line-height:3.5vh;height: auto;'
-            v-show="isreload" v-if="jiedianinfo.wenti_A" class='zm_btn' v-on:click='huida("A")'>A：{{jiedianinfo.wenti_A}}</div>
+            v-show="isreload" v-if="jiedianinfo.wenti_A" class='zm_btn' v-on:click='huida("A")'>{{jiedianinfo.wenti_A}}</div>
         </transition>
         <transition name="zd_shanghua_B" appear>
           <div style='background-color:red;width: 86vw;min-height: 30px;text-align: left;line-height:3.5vh;height: auto;'
-            v-show="isreload" v-if="jiedianinfo.wenti_B" class='zm_btn' v-on:click='huida("B")'>B：{{jiedianinfo.wenti_B}}</div>
+            v-show="isreload" v-if="jiedianinfo.wenti_B" class='zm_btn' v-on:click='huida("B")'>{{jiedianinfo.wenti_B}}</div>
         </transition>
         <transition name="zd_shanghua_C" appear>
           <div style='background-color:red;width: 86vw;min-height: 30px;text-align: left;line-height:3.5vh;height: auto;'
-            v-show="isreload" v-if="jiedianinfo.wenti_C" class='zm_btn' v-on:click='huida("C")'>C：{{jiedianinfo.wenti_C}}</div>
+            v-show="isreload" v-if="jiedianinfo.wenti_C" class='zm_btn' v-on:click='huida("C")'>{{jiedianinfo.wenti_C}}</div>
         </transition>
       </div>
     </div>

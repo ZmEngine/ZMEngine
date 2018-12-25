@@ -13,7 +13,7 @@ function GetLiuCheng (liuchengbianma, banben) {
     let liuchengone = zm.readjson(liuchengsrc)
     liuchengone.banben = banben
     liuchengone.code = liuchengbianma
-    liuchengone.name = liucheng.name
+    liuchengone.name = liucheng.mingcheng
     liuchengone.banbens = liucheng.banbens
     return liuchengone
 }

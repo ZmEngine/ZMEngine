@@ -10,22 +10,24 @@ export default [
   // 首页
   {
     path: '/home/:liuchengcode',
-    component: home,
-    meta : { title: '主页' }
+    component: home
+  },
+  // 首页
+  {
+    path: '/home/:liuchengcode/:banben',
+    component: home
   },
   // 问题页
   {
     name:'wenti',
     path: '/wenti/:liuchengcode/:banben/:wenticode',
-    component: wenti,
-    meta : { title: '问题' }    
+    component: wenti   
   },
   // 结束页
   {
     name:'jieshu',
     path: '/jieguo/:liuchengcode/:banben/:wenti/:daan',
-    component: jieguo,
-    meta : { title: '结果' }
+    component: jieguo
     
   }
   

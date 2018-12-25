@@ -31,10 +31,11 @@
     },
     created: function () {
       var that = this;
+      //console.log("banben",this.$route.params.banben||"x")
       //加载流程信息
       getList("zmapi/sellcinfo", {
         lccode: that.workflow,
-        banben: ''
+        banben: this.$route.params.banben||""
       }, function (r) {
         that.liucheng = r.data.jg
         that.banben = (that.liucheng.banben ? that.liucheng.banben : that.liucheng.banbens[0].value)
@@ -57,6 +58,17 @@
         $("#fenxiangtupian").attr("src",that.fengmian) // 分享图标
         $("#miaoshu").text(selArrByKey(that.liucheng.params, "code", "miaoshu").morenzhi)
         that.jiedian = that.liucheng.jiedian
+          //分享选项
+          wxfenxiang({
+        biaoti: $("title").text(), // 分享标题
+        link: window.location.href.split("#")[0]+"#/home/"+ this.$route.params.liuchengcode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        img: $("#fenxiangtupian").attr("src"), // 分享图标
+        miaoshu:$("#miaoshu").text(),
+        huidiao: function (res) {
+          //这里是回调函数 
+         console.log(res)
+        }
+      })
       },
       kaishidiaocha() {
         var kaishicode = selArrByKey(this.jiedian, "qishi", "true").code

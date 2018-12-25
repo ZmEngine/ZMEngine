@@ -10,7 +10,7 @@
         <el-tab-pane label="参数配置" name="first">
           <el-form :model="canshu_form" label-width="100px">
             <el-form-item v-for=" arr  in canshu_form.arr" :label="arr.code" :key="arr.pid">
-              <el-input v-model="canshus[arr.code]" size="small" style="max-width:200px; margin-right:50px;"></el-input><span>{{arr.beizhu}}</span>
+              <el-input v-model="canshus[arr.code]" size="small" style="width:90vw; margin-right:50px;"></el-input><span>{{arr.beizhu}}</span>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="submitcanshu()">提交</el-button>
@@ -19,7 +19,7 @@
         </el-tab-pane>
         <el-tab-pane label="生命周期" name="second">
 
-          <el-form :model="buzou_form" :label-position="formlabelPosition" label-width="100px">
+          <el-form :model="buzou_form" :label-position="formlabelPosition" label-width="100vw">
             <el-form-item label="创建前">
               <el-select v-model="buzou_form.chuangjianqian" placeholder="请选择">
                 <el-option v-for="item in tableData3" :key="item.pid" :label="item.mingcheng" :value="item.pid">

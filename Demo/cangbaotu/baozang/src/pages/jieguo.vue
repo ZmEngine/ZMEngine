@@ -48,8 +48,8 @@
     },
     created: function () {
       console.log(window.innerWidth,window.innerHeight)
-      this.huabanw=window.innerWidth-20
-      this.huabanh=window.innerHeight*0.8
+      this.huabanw=(window.innerWidth-20)*4
+      this.huabanh=(window.innerHeight*0.8)*4
      //加载答案
       var that = this
         getList("zmapi/selnownode", {
@@ -68,10 +68,10 @@
           that.diaochajieguo=jgneirong[that.$route.params.wenti][that.$route.params.daan]
           if(jgneirong.x){
             that.x=jgneirong.x
-            that.y=jgneirong.y
+            that.y=jgneirong.y            
             that.h=jgneirong.h
           }
-         }          
+         }     
         });
     },
     methods: {
@@ -82,15 +82,16 @@
         this.huaban = document.getElementById("huaban")
         var ctx = this.huaban.getContext("2d");
         ctx.drawImage(mbimg, 0, 0, this.huaban.width, this.huaban.height);
-        ctx.fillStyle = "#FF0000";
+        ctx.fillStyle = "#edea55";
         //ctx.fillRect(0,0,150,75);
         // ctx.font = " 30px arial"
         // xiezi_juzhong(ctx, "测试结果", 50)
-        ctx.font = " 20px arial"
+        ctx.font = "80px arial"
         
         // ctx.fillStyle = "#00FF00";
         // ctx.fillText("str", 30, 30);
         console.log(this.diaochajieguo)
+        ctx.textAlign = "left";
         xiezi(ctx,this.diaochajieguo,this.x,this.y,this.h);
         this.downImg = this.huaban.toDataURL('image/jpeg')
         //分享选项
