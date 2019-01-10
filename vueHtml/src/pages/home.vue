@@ -32,18 +32,31 @@
                 <i class="el-icon-menu"></i>流程列表
               </template>
             </el-menu-item>
-            <el-submenu index="4">
+            <el-submenu index="5">
+              <template slot="title">
+                <i class="el-icon-setting"></i>
+                <span>辅助功能</span>
+              </template>
+              <el-menu-item-group>
+                <el-menu-item index="51" @click="openpage('neirongzujian',['5','51'])">
+                      <template slot="title">
+                        <i class="el-icon-menu"></i>内容组件配置
+                      </template>
+                </el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="6">
               <template slot="title">
                 <i class="el-icon-setting"></i>
                 <span>系统配置</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="41" @click="openpage('sucai',['4','41'])">
+                <el-menu-item index="61" @click="openpage('sucai',['6','61'])">
                       <template slot="title">
                         <i class="el-icon-menu"></i>素材管理
                       </template>
                 </el-menu-item>
-                <el-menu-item index="45" @click="openpage('xiugaimima',['4','43'])">
+                <el-menu-item index="65" @click="openpage('xiugaimima',['6','65'])">
                   <template slot="title">
                     <i class="el-icon-setting"></i>修改密码
                   </template>

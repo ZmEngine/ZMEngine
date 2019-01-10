@@ -5,3 +5,5 @@ server/tools/logs/*.log
 /netWebApi/fabuhou
 /netWebApi/ZmHelperApi/bin
 /netWebApi/ZmHelperApi/obj
+/server/json/jingtaiyemian
+/server/node_modules/koa2-cors

@@ -10,6 +10,8 @@ const liucheng = () => import(/* webpackChunkName: "home" */ '../pages/liucheng.
 const kongbai = () => import(/* webpackChunkName: "kaishi" */ '../pages/kongbai.vue')
 const peizhi = () => import(/* webpackChunkName: "home" */ '../pages/peizhi.vue')
 const jiedian = () => import(/* webpackChunkName: "home" */ '../pages/jiedian.vue')
+
+const neirongzujian = () => import(/* webpackChunkName: "jingtaiyemian" */ '../pages/neirongzujian.vue')
 export default [
   // 地址为空时跳转home页面
   {
@@ -34,7 +36,8 @@ export default [
       { name:'sucai', path: 'sucai', component: sucai, meta : { title: '素材管理' } },
       { name:'xiugaimima', path: 'xiugaimima', component: xiugaimima, meta : { title: '修改密码' } },
       { name:'fuwu', path: 'fuwu', component: fuwu, meta : { title: '服务列表' } },
-      { name:'liucheng', path: 'liucheng', component: liucheng, meta : { title: '流程列表' } }
+      { name:'liucheng', path: 'liucheng', component: liucheng, meta : { title: '流程列表' } },
+      {name:'neirongzujian',path:'neirongzujian',component:neirongzujian,meta:{title:'组件配置'}}
       // ...其他子路由
     ]
   },  // 首页
